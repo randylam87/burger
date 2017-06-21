@@ -1,0 +1,12 @@
+body {
+    background-color: tan;
+}
+
+.container {
+    background-image: url('../img/burger.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    /*background-position: center;*/
+    color: white;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
