@@ -4,7 +4,7 @@ const orm = {
     //SELECT * FROM burgers;
     selectAll: (tableInput, cb) => {
         let queryString = 
-        `SELECT * FROM ${tableInput};`
+        `SELECT * FROM ${tableInput};`;
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;
@@ -16,7 +16,7 @@ const orm = {
     insertOne: (tableInput, colName, insertValue, cb) => {
         let queryString = 
         `INSERT INTO ${tableInput} (${colName})
-        VALUES ('${insertValue}');`
+        VALUES ('${insertValue}');`;
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;
@@ -29,8 +29,8 @@ const orm = {
         let queryString = 
         `UPDATE ${tableInput}
         SET ${colName} = ${colValue}
-        WHERE ${id} = ${rowValue}
-        `
+        WHERE ${id} = ${rowValue};
+        `;
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;
