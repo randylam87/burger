@@ -14,7 +14,7 @@ let burgers = {
     },
 
     devour: (burgerId, cb) =>{
-        orm.updateOne('burgers', 'devoured', 'true', 'id', burgerId, (res) => {
+        orm.updateOne('burgers', 'devoured', 1, 'id', burgerId, (res) => {
             cb(res);
         })
     }

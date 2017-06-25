@@ -4,21 +4,27 @@ const burgers = require('../models/burger.js');
 
 router.get('/',(req,res)=>{
     burgers.all((data)=>{
-        let hbsObject = {
+        let burgersObject = {
             burgers: data
         };
-        res.render('index',hbsObject);
+        res.render('index',burgersObject);
     });
 });
 
 router.post('/',(req,res)=>{
     let burger = req.body.burger;
     burgers.add(burger,(data)=>{
-        let hbsObject = {
-            burgers: data
-        };
+        // console.log(data);
         res.redirect('/');
-    })
-})
+    });
+});
 
+router.put('/:id',(req,res)=>{
+    let id = req.params.id;
+    burgers.devour(id,(data)=>{
+        // console.log(data);
+        res.redirect('/');
+    });
+})
+//exports to server.js
 module.exports = router;
