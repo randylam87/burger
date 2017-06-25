@@ -13,10 +13,10 @@ const orm = {
         });
     },
     //INSERT INTO burgers ('burger_name') VALUES ('random burger');
-    insertOne: (tableInput, insertValue, cb) => {
+    insertOne: (tableInput, colName, insertValue, cb) => {
         let queryString = 
-        `INSERT INTO ${tableInput} ('burger_name');
-        VALUES (${insertValue});`
+        `INSERT INTO ${tableInput} (${colName})
+        VALUES ('${insertValue}');`
         connection.query(queryString, (err, result) => {
             if (err) {
                 throw err;

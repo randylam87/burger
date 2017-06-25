@@ -1,4 +1,4 @@
-const path = require('path');
+
 const mysql = require('mysql');
 
 connection = mysql.createConnection({
@@ -11,10 +11,10 @@ connection = mysql.createConnection({
 
 connection.connect((err)=>{
     if(err){
-        console.err(`Error connecting: ${err.staack}`);
+        console.error(`Error connecting: ${err.stack}`);
         return
     }
-    console.log(`Connected as id: ${connection.threadID}`)
+    console.log(`Connected as id: ${connection.threadId}`)
 });
 
 module.exports = connection;

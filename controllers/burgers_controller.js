@@ -11,4 +11,14 @@ router.get('/',(req,res)=>{
     });
 });
 
+router.post('/',(req,res)=>{
+    let burger = req.body.burger;
+    burgers.add(burger,(data)=>{
+        let hbsObject = {
+            burgers: data
+        };
+        res.redirect('/');
+    })
+})
+
 module.exports = router;

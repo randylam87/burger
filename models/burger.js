@@ -5,6 +5,18 @@ let burgers = {
         orm.selectAll('burgers', (res) => {
             cb(res);
         })
+    },
+
+    add: (burger, cb) => {
+        orm.insertOne('burgers', 'burger_name', burger, (res) =>{
+            cb(res);
+        })
+    },
+
+    devour: (burgerId, cb) =>{
+        orm.updateOne('burgers', 'devoured', 'true', 'id', burgerId, (res) => {
+            cb(res);
+        })
     }
 }
 
